@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>exhibition site</title>
+	<link rel="stylesheet" href="style.css">
+
+
+		<script type="text/javascript">
+	
+		var countDownDate = new Date("Jan 1, 2019 00:00:00").getTime();
+
+		var x = setInterval(function(){
+
+			var time = new Date().getTime();
+			var timeleft = countDownDate - time;
+
+			var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+			document.getElementById("counter").innerHTML = '<div class="box time">' + days + '</div><div class="box time">' + hours + '</div><div class="box time">' + minutes + '</div><div class="box time">' + seconds + '</div>';
+		},1000);
+	</script>
+</head>
+<body>
+	<div class="sculture3d"></div>
+	<ul>
+		<li><a href="#">Exhibition</a></li>
+		<li><a href="#">Archiving</a></li>
+		<li><a href="#">Service</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">FAQ</a></li>
+	</ul>
+	<div class="title">
+		<h1>2018_Designer_Artist</h1>
+		<p>As a site where you can collect various exhibitions held in Korea in 2018, I will show you various meaningful visualizations of the exhibition or the upcoming exhibition.  </p>
+	</div>
+	
+	<img src="Elements.png" id="elements"/>
+		<h2>Exhibition Archiving </h2>
+		<h3>Korea in 2018</h3>
+		<h4>Visualization</h4>
+<script src="./js/Three.js" type="text/javascript"></script>
+<script src="./js/OBJLoader.js" type="text/javascript"></script>
+<script src="./js/MTLLoader.js" type="text/javascript"></script>
+<script src="./js/test.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$('h2').on('mousemove',function(e){
+		centerX = $(this).width()/2;
+		var moveX = centerX - e.offsetX;
+		$(this).css({
+			'transform': 'perspective(500px) rotateY('+ moveX/20 + 'deg)'
+		})
+	})
+
+	$('h3').on('mousemove',function(e){
+		centerX = $(this).width()/2;
+		var moveX = centerX - e.offsetX;
+		$(this).css({
+			'transform': 'perspective(500px) rotateY('+ moveX/20 + 'deg)'
+		})
+	})
+
+	$('h4').on('mousemove',function(e){
+		centerX = $(this).width()/2;
+		var moveX = centerX - e.offsetX;
+		$(this).css({
+			'transform': 'perspective(500px) rotateY('+ moveX/20 + 'deg)'
+		})
+	})
+</script>
+<div id="container">
+	<div id="counter"></div>
+	<div class="box ttitle">DAYS</div>
+	<div class="box ttitle">HOURS</div>
+	<div class="box ttitle">MINUTES</div>
+	<div class="box ttitle">SECONDS</div>
+</div>
+<div id="poster"></div>
+<section data-animate-scroll='{"scaleX": "1.2","scaleY": "1.2", "alpha": "0", "duration": ".5"}'>
+	<img src="poster1.jpg">
+</section>
+<section data-animate-scroll='{"scaleX": "1.5","scaleY": "1.5", "alpha": "0", "duration": ".5"}'>
+	<img src="poster2.jpg">
+</section>
+<section data-animate-scroll='{"scaleX": "2","scaleY": "2", "alpha": "0", "duration": ".5"}'>
+	<img src="poster3.jpg">
+</section>
+<section data-animate-scroll='{"x": "-200","y": "0", "alpha": "0", "duration": ".5"}'>
+	<img src="poster4.jpg">
+</section>
+<section data-animate-scroll='{"x": "200","y": "0", "alpha": "0", "duration": ".5"}'>
+	<img src="poster5.jpg">
+</section>
+<section data-animate-scroll='{"x": "-200","y": "0", "alpha": "0", "duration": ".5"}'>
+	<img src="poster6.jpg">
+</section>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="TweenMax.js"></script>
+<script src="ScrollToPlugin.js"></script>
+<script src="EaselPlugin.js"></script> 
+<script src="animate-scroll.js"></script>
+<script type="text/javascript">
+	  $(document).animateScroll();  
+</script>
+</body>
+</html>
